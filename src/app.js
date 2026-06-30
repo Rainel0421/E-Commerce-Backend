@@ -13,7 +13,13 @@ const UploadRoutes = require("./routes/upload.routes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',  // Para desarrollo local (Vite)
+    'https://e-commerce-frontend-sigma-lemon.vercel.app/' // URL de tu Frontend en Vercel
+  ],
+  credentials: true
+}));
 
 // ⚠️ El webhook de Stripe va ANTES de express.json().
 // Stripe firma el body CRUDO; si express.json() lo parsea primero,
