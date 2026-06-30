@@ -15,12 +15,11 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'https://e-commerce-frontend-bl4rkb69p-rainelmejia9-gmailcoms-projects.vercel.app'  // ← URL nueva
+    'http://localhost:5173',  // Para desarrollo local (Vite)
+    'https://e-commerce-frontend-sigma-lemon.vercel.app/' // URL de tu Frontend en Vercel
   ],
   credentials: true
 }));
-
 // ⚠️ El webhook de Stripe va ANTES de express.json().
 // Stripe firma el body CRUDO; si express.json() lo parsea primero,
 // la verificación de la firma falla. Por eso esta ruta va aquí arriba.
