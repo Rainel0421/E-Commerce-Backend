@@ -16,7 +16,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',  // Para desarrollo local (Vite)
-    'https://e-commerce-frontend-sigma-lemon.vercel.app/' // URL de tu Frontend en Vercel
+    'https://e-commerce-frontend-sigma-lemon.vercel.app' // URL de tu Frontend en Vercel
   ],
   credentials: true
 }));
